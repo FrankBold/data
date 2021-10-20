@@ -172,7 +172,7 @@ def dotceneObce(lok):
 def odeslatEmail(email, obsah): # Odeslání těla mailu a adresáta ke zpracování rozesílky do Integromatu.
     data = { "email": email, "obsah": obsah }
     print(email)
-    webhook_data = requests.post('https://hook.integromat.com/i96xb48sgiprb74nxwpkllz8gvy2ime2', data=json.dumps(data),headers={'Content-Type': 'application/json'})
+    webhook_data = requests.post(INTEGROMAT_WEBHOOK, data=json.dumps(data),headers={'Content-Type': 'application/json'})
     print(webhook_data.text)
 
 def shoda_lokalita(lokalita, odber):
